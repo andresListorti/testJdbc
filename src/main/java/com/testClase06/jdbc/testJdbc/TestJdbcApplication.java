@@ -20,7 +20,11 @@ public class TestJdbcApplication implements CommandLineRunner{
 		PersonaDAO dao = new PersonaDAO();
 		dao.findAll().stream().forEach(System.out::println);
 
-		 
+		dao.findPersonasPorEdad(29).stream().forEach(x -> x.toString());
+		System.out.println("**********************************************");
+		for (Persona persona : dao.findPersonasPorEdad(29)) {
+		System.out.println(persona);
+		}
 
 
 	}
