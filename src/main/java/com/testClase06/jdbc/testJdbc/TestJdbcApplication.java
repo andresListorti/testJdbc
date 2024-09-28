@@ -15,10 +15,13 @@ public class TestJdbcApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		
+
 		System.out.println("Hola Spring");
 		
 		PersonaDAO dao = new PersonaDAO();
+		// dao.crearPersona(new Persona("Fernando", "Valls", "35323561", 34, "11-2342-345", "bX7Rk@example.com", 4L));
+		// dao.updatePersona("35323561", 666);
+		// System.out.println(dao.findById(11L));
 		System.out.println("*****************Todas*****************************");
 		dao.findAll().stream().forEach(System.out::println);
 
@@ -30,7 +33,7 @@ public class TestJdbcApplication implements CommandLineRunner{
 
 		System.out.println("****************por inicial M******************************");
 		//dao.personasPorInicial("M").stream().forEach(x -> x.toString());
-		for (Persona persona : dao.personasPorInicial("M")) {
+		for (Persona persona : dao.personasPorInicial("m")) {
 			System.out.println(persona);
 		}
 
